@@ -1,0 +1,43 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "logs": "firebase functions:log",
+    "lint": "eslint .",
+    "flow": "flow",
+    "unittest": "nyc --check-coverage --lines 90 --per-file mocha",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "actions-on-google": "^2.4.1",
+	"chai": "^4.2.0",
+    "dialogflow-fulfillment": "^0.6.1",
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.0.3",
+    "leboncoin-api": "0.0.35"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.83.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  },
+  "nyc": {
+    "include": [
+      "index.js",
+      "leboncoin.helper.js"
+    ]
+  },
+  "private": true
+}
